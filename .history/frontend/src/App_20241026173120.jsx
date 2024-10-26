@@ -1,0 +1,19 @@
+import { useState } from 'react'
+
+import './App.css'
+
+function App() {
+
+
+  return (
+    <>
+      <h1 className="text-3xl font-bold underline">
+        Hello Developers good morning!
+     
+      </h1>
+      <h2>We are going to Develop a Campus College Tracker Web App that Track academic life of Students</h2>
+    </>
+  )
+}
+
+export default App

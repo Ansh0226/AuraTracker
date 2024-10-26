@@ -1,20 +1,15 @@
-import { useState } from 'react'
-
-import './App.css'
+import { Outlet} from "react-router-dom";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Hello Developers good morning! 
-        <br />
-        Welcome to Aura Tracker Project , Part of CodeSangam
-      </h1>
-      <h2>We are going to Develop a Campus College Tracker Web App that Track academic life of Students</h2>
+      
+
+      {/* Nested routes will render here */}
+      <Outlet />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

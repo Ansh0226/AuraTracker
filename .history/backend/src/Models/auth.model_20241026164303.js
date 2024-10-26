@@ -1,0 +1,13 @@
+const mongoose = require("mongoose");
+
+const AuthSchema = new mongoose.Schema({
+  googleId: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  name: { type: String },
+  profilePicture: { type: String },
+  accessToken: { type: String },
+  refreshToken: { type: String },
+  createdAt: { type: Date, default: Date.now },
+});
+
+module.exports = mongoose.model("Auth", AuthSchema);
