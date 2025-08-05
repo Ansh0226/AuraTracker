@@ -17,13 +17,13 @@ export const signup = async (req, res) => {
     }
 
     // Hash password
-    const hashedPassword = await bcrypt.hash(password, 12);
+    //const hashedPassword = await bcrypt.hash(password, 12);
 
     // Create new user with embedded profile and academic schemas with default values
     const newUser = new User({
       email,
       name,
-      password: hashedPassword,
+      password,
       year,
       regNo,
       course,
@@ -78,14 +78,13 @@ export const login = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
     console.log("User found:", user);
-    if(role!=='admin'){  // check only if user is not admin
-    // Log the hashed password
-    console.log("Stored hashed password:", user.password);
-    console.log("Input password:", password); // Log input password
-    const hashedPassword = await bcrypt.hash(password, 12);
+    if(role!=='admin'){  
+    // console.log("Stored hashed password:", user.password);
+    // console.log("Input password:", password); // Log input password
+    // const hashedPassword = await bcrypt.hash(password, 12);
 
     // Trim input password
-    const isMatch = await bcrypt.compare(password, hashedPassword);
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch)
       return res.status(401).json({ message: "Invalid credentials" });
 
