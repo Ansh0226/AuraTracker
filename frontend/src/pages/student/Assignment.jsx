@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose, content }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-lg max-w-lg w-full text-black">
         <h3 className="text-xl font-semibold mb-4">Assignment Content</h3>
-        <img src="{content}" alt="Assessment Content Link" />
+        <img src={content} alt="Assessment Content Link" />
         <button
           onClick={onClose}
           className="px-4 py-2 bg-red-600 text-white rounded"
